@@ -7,7 +7,9 @@ import { FavoritesComponent } from '../app/favorites/favorites.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Routes } from '@angular/router';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { SingleMovieComponent } from './single-movie/single-movie.component'
 
 const appRoutes: Routes = [
   {path: 'home', component: MovieListComponent},
@@ -19,7 +21,9 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PagenotfoundComponent,
+    SingleMovieComponent
   ],
   imports: [
     BrowserModule,
