@@ -1,1 +1,10 @@
-<!-- <app-movie-list></app-movie-list> -->
+<form #searchForm="ngForm" (submit)="formSubmitted(searchForm)">
+    <input name="searchTerm" type='text' placeholder="search for movies" ngModel>
+    <button type="submit">Go</button>
+</form>
+
+<select [(ngModel)]="genre" (change)="changeGenreMethod()">
+    <option *ngFor="let genre of getGenres()" [value]="genre">{{genre.name}}</option>
+</select>
+
+<app-movie-list></app-movie-list>
