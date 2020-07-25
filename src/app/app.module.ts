@@ -23,7 +23,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     PagenotfoundComponent,
-    SingleMovieComponent
+    SingleMovieComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,

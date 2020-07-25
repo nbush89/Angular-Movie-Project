@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from './movies.service';
+import { NgForm } from '@angular/forms';
+import { Genre } from 'src/app/models/genre';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +9,31 @@ import { MoviesService } from './movies.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private movieService: MoviesService) {}
+
+  genre: Genre; 
+
+  constructor(private moviesService: MoviesService) {}
+
   ngOnInit() {
-    this.movieService.genre = 1,
-    this.movieService.getMovies({page: 2, year: 1990} ).subscribe((data) => {
-      console.log(data)
-    }) 
+    this.moviesService.getMovies({page: 1, sortBy: "popularity.desc"} ).subscribe((data: any) => {
+      this.moviesService.movies = data.results;  
+    });
+
+    this.moviesService.getGenres().subscribe((data: any) => {
+      this.moviesService.genres = data.genres
+      console.log(this.moviesService.genres)
+    })
   }
-  title = 'movies-project';
+
+    formSubmitted(data: NgForm) {
+      console.log(data)
+  }
+
+  getGenres() {
+    return this.moviesService.genres; 
+  }
+
+  changeGenreMethod() {
+    console.log(this.genre)
+  }
 }

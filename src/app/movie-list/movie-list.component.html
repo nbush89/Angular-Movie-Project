@@ -1,4 +1,1 @@
-<div>
-
-    <app-single-movie></app-single-movie>
-</div>
+<app-single-movie *ngFor="let movie of getMovies()" [child]="movie"></app-single-movie>
