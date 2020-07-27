@@ -25,8 +25,22 @@ export class AppComponent implements OnInit {
     })
   }
 
-    formSubmitted(data: NgForm) {
-      console.log(data)
+    formSubmitted(data: any) {
+      const parameters: any = {
+        keyword: data.with_keywords
+    };
+    this.moviesService.getMovies(parameters).subscribe(this.onSuccess.bind(this), this.onError.bind(this));
+    this.moviesService.movies = data.results; 
+    console.log(data)
+  }
+
+
+  onSuccess(data: any) {
+    this.moviesService.movies = data.results;
+  }
+
+  onError(error: Error) {
+    console.log(error.message);
   }
 
   getGenres() {
@@ -34,6 +48,6 @@ export class AppComponent implements OnInit {
   }
 
   changeGenreMethod() {
-    console.log(this.genre)
+      console.log(this.moviesService.genres)
   }
 }

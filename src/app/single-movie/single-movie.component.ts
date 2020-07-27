@@ -18,8 +18,10 @@ constructor() { }
 
   ngOnInit()  {
   this.movie = { 
-    poster: 'https://image.tmdb.org/t/p/original' + this.child.poster_path
-
+    poster: 'https://image.tmdb.org/t/p/original' + this.child.poster_path,
+    title: this.child.title,
+    release_date: this.child.release_date,
+    overview: this.child.overview,
   }
   }
 
