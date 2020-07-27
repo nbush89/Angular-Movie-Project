@@ -1,5 +1,5 @@
-<form #searchForm="ngForm" (submit)="formSubmitted(searchForm)">
-    <input name="searchTerm" type='text' placeholder="search for movies" ngModel>
+<form #searchForm="ngForm" (submit)="formSubmitted(searchForm.value)">
+    <input name="keyword" type='text' placeholder="search for movies" ngModel>
     <button type="submit">Go</button>
 </form>
 

@@ -19,9 +19,9 @@ export class MoviesService {
   getMovies(data: any): Observable<any> {
     let parameters = {
       page: data.page ? data.page : '',
-      year: data.year ? data.year : '',
+      keyword: data.keyword ? data.keyword : '',
       api_key: this.apiKey,
-      genre: this.genre,
+      genre: this.genre ? this.genre : '',
       sort_by: data.sortBy ? data.sortBy : '',
     };
     return this.http.get<any>('https://api.themoviedb.org/3/discover/movie', {params: {api_key: this.apiKey}});
