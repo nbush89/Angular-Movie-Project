@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { SingleMovieComponent } from './single-movie/single-movie.component'
+import { SingleMovieComponent } from './single-movie/single-movie.component';
+import { SearchCriteriaComponent } from './search-criteria/search-criteria.component'
 
 const appRoutes: Routes = [
   {path: 'home', component: MovieListComponent},
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     AppComponent,
     PagenotfoundComponent,
     SingleMovieComponent,
-    MovieListComponent
+    MovieListComponent,
+    SearchCriteriaComponent
   ],
   imports: [
     BrowserModule,

@@ -21,14 +21,17 @@ export class MoviesService {
       page: data.page ? data.page : '',
       keyword: data.keyword ? data.keyword : '',
       api_key: this.apiKey,
-      genre: this.genre ? this.genre : '',
-      sort_by: data.sortBy ? data.sortBy : '',
+      with_genres: data.genre ? data.genre : '',
+      sort_by: data.sortBy ? data.sortBy : "popularity.desc",
     };
-    return this.http.get<any>('https://api.themoviedb.org/3/discover/movie', {params: {api_key: this.apiKey}});
+    return this.http.get<any>('https://api.themoviedb.org/3/discover/movie', {params: parameters});
   }
 
   getGenres(): Observable<any> {
     return this.http.get<any>('https://api.themoviedb.org/3/genre/movie/list', {params: {api_key: this.apiKey}});
   }
 
+  // findMovieTitle(): Observable<any> {
+  //   return this.http.get<any>
+  // }
 }
