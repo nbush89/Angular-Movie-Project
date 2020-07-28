@@ -8,7 +8,7 @@ import { Genre } from 'src/app/models/genre';
   styleUrls: ['./search-criteria.component.css'],
 })
 export class SearchCriteriaComponent implements OnInit {
-  
+
   genre: Genre;
 
   constructor(private moviesService: MoviesService) {}
