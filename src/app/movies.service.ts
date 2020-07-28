@@ -30,8 +30,4 @@ export class MoviesService {
   getGenres(): Observable<any> {
     return this.http.get<any>('https://api.themoviedb.org/3/genre/movie/list', {params: {api_key: this.apiKey}});
   }
-
-  // findMovieTitle(): Observable<any> {
-  //   return this.http.get<any>
-  // }
 }
