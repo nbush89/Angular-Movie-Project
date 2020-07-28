@@ -1,0 +1,9 @@
+<form #searchForm="ngForm" (submit)="formSubmitted(searchForm.value)">
+    <input name="keyword" type='text' placeholder="search by title" ngModel>
+    <button type="submit">Go</button>
+
+    <select name="genre" ngModel>
+        <option *ngFor="let genre of getGenres()" [value]="genre.id">{{genre.name}}</option>
+    </select>
+</form>
+
