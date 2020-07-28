@@ -10,13 +10,13 @@ import { Genre } from 'src/app/models/genre';
 })
 export class AppComponent implements OnInit {
 
-  genre: Genre; 
+  genre: Genre;
 
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit() {
-    this.moviesService.getMovies({page: 1, sortBy: "popularity.desc"} ).subscribe((data: any) => {
-      this.moviesService.movies = data.results;  
+    this.moviesService.getMovies({page: 1, sortBy: 'popularity.desc'} ).subscribe((data: any) => {
+      this.moviesService.movies = data.results;
     });
   }
 }

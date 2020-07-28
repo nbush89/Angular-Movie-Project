@@ -26,7 +26,8 @@ const appRoutes: Routes = [
     PagenotfoundComponent,
     SingleMovieComponent,
     MovieListComponent,
-    SearchCriteriaComponent
+    SearchCriteriaComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

@@ -10,17 +10,14 @@ import { Parent } from 'src/app/models/parent';
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
-
-
-
-  constructor(private moviesService: MoviesService) { }
+constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
 
   }
 
   getMovies() {
-    return this.moviesService.movies; 
+    return this.moviesService.movies;
   }
 
 }

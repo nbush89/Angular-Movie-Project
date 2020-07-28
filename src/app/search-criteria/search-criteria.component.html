@@ -2,8 +2,11 @@
     <input name="keyword" type='text' placeholder="search by title" ngModel>
     <button type="submit">Go</button>
 
-    <select name="genre">
+    <select name="genre" ngModel>
         <option *ngFor="let genre of getGenres()" [value]="genre.id">{{genre.name}}</option>
     </select>
+    
 </form>
+
+<a routerLink="/favorites" routerLinkActive="active"><button>Show Favorites</button></a>
 
