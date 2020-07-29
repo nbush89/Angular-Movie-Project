@@ -1,12 +1,15 @@
-<form #searchForm="ngForm" (submit)="formSubmitted(searchForm.value)">
-    <input name="keyword" type='text' placeholder="search by title" ngModel>
-    <button type="submit">Go</button>
+<header>
+    <h1>The Movie Corner</h1>
+    <a routerLink="/favorites" routerLinkActive="active"><button>Show Favorites</button></a>
+</header>
 
-    <select name="genre" ngModel>
+<form #searchForm="ngForm" (submit)="formSubmitted(searchForm)">
+    <input name="year" type='text' placeholder="search by year" ngModel>
+
+    <select name="genre" ngModel onChange="this.searchForm.submit()">
         <option *ngFor="let genre of getGenres()" [value]="genre.id">{{genre.name}}</option>
     </select>
     
+    <button type="submit">submit</button>
 </form>
-
-<a routerLink="/favorites" routerLinkActive="active"><button>Show Favorites</button></a>
 
