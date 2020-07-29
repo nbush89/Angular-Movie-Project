@@ -13,16 +13,19 @@ export class MoviesService {
   genre: number;
   movies: any; 
   genres: Genre[]; 
+  year: number; 
+  //page: number = 1; 
 
   constructor(private http: HttpClient) { }
 
   getMovies(data: any): Observable<any> {
     let parameters = {
       page: data.page ? data.page : '',
-      keyword: data.keyword ? data.keyword : '',
+      primary_release_year: data.year ? data.year : '',
       api_key: this.apiKey,
       with_genres: data.genre ? data.genre : '',
       sort_by: data.sortBy ? data.sortBy : "popularity.desc",
+      //page: this.page
     };
     return this.http.get<any>('https://api.themoviedb.org/3/discover/movie', {params: parameters});
   }

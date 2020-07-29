@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { Genre } from 'src/app/models/genre';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-search-criteria',
@@ -9,7 +10,7 @@ import { Genre } from 'src/app/models/genre';
 })
 export class SearchCriteriaComponent implements OnInit {
 
-  genre: Genre;
+  genre: Genre; 
 
   constructor(private moviesService: MoviesService) {}
 
@@ -20,18 +21,14 @@ export class SearchCriteriaComponent implements OnInit {
     });
   }
 
-  formSubmitted(data: any) {
-    console.log(data.keyword)
-    console.log(data.with_keywords)
+  formSubmitted(data: NgForm) {
     const parameters: any = {
-      keyword: data.keyword,
-      genre: data.genre,
+      genre: data.value.genre,
+      year: data.value.year
     };
     this.moviesService
       .getMovies(parameters)
       .subscribe(this.onSuccess.bind(this), this.onError.bind(this));
-    this.moviesService.movies = data.results;
-    console.log(data);
   }
 
   onSuccess(data: any) {
@@ -44,11 +41,11 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   getGenres() {
-    //console.log(this.moviesService.genres)
     return this.moviesService.genres;
   }
 
-  changeGenreMethod() {
-    //console.log(this.moviesService.genres)
+  next() {
+    
   }
+
 }
