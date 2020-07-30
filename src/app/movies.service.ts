@@ -14,14 +14,18 @@ export class MoviesService {
   movies: any; 
   genres: Genre[]; 
   year: number; 
+  rating: number;
   //page: number = 1; 
 
   constructor(private http: HttpClient) { }
 
   getMovies(data: any): Observable<any> {
+    // console.log(data);
     let parameters = {
       page: data.page ? data.page : '',
       primary_release_year: data.year ? data.year : '',
+      "vote_average.gte": data.greaterThanRating ? data.greaterThanRating : '',
+      "vote_average.lte": data.lessThanRating ? data.lessThanRating : '',
       api_key: this.apiKey,
       with_genres: data.genre ? data.genre : '',
       sort_by: data.sortBy ? data.sortBy : "popularity.desc",

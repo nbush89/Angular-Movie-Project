@@ -6,6 +6,11 @@
 <form #searchForm="ngForm" (submit)="formSubmitted(searchForm)">
     <input name="year" type='text' placeholder="search by year" ngModel>
 
+    <input name="rating" type="number" placeholder="search by rating" ngModel>
+
+    <input type="radio" [value]="true" name="greaterThanRating" ngModel> Greater Than
+    <input type="radio" [value]="false" name="greaterThanRating" ngModel> Less Than
+
     <select name="genre" ngModel onChange="this.searchForm.submit()">
         <option *ngFor="let genre of getGenres()" [value]="genre.id">{{genre.name}}</option>
     </select>
