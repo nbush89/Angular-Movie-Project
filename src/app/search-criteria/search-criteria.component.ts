@@ -22,10 +22,24 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   formSubmitted(data: NgForm) {
-    const parameters: any = {
-      genre: data.value.genre,
-      year: data.value.year
-    };
+    let parameters: any;
+    let greaterThanRating = data.value.greaterThanRating;
+    console.log(greaterThanRating);
+    if (greaterThanRating) {
+      parameters = {
+        genre: data.value.genre,
+        year: data.value.year,
+        greaterThanRating: data.value.rating
+      };
+    } else {
+      parameters = {
+        genre: data.value.genre,
+        year: data.value.year,
+        lessThanRating: data.value.rating
+      };
+    }
+    
+    console.log(parameters);
     this.moviesService
       .getMovies(parameters)
       .subscribe(this.onSuccess.bind(this), this.onError.bind(this));
