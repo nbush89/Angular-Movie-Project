@@ -15,7 +15,9 @@ export class MoviesService {
   genres: Genre[]; 
   year: number; 
   rating: number;
-  //page: number = 1; 
+  //page: number = 1;
+
+  favoriteMovies: any = [];
 
   constructor(private http: HttpClient) { }
 

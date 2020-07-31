@@ -1,1 +1,8 @@
 <a routerLink ="/home" routerLinkActive="active">Back to Discover Page</a>
+
+<div *ngFor="let movie of getMovies()">
+        <img [src]="movie.poster ? movie.poster : 'https://via.placeholder.com/150'">
+        {{movie.title}}
+        {{movie.release_date}}
+        <i class="fas fa-heart" (click)="addToFavorites(movie)" ></i>
+</div>
