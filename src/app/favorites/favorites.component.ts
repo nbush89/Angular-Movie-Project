@@ -16,4 +16,9 @@ export class FavoritesComponent implements OnInit {
   getMovies() {
     return this.movieService.favoriteMovies;
   }
+
+  removeFromFavorites(movie) {
+    const itemIndex = this.movieService.favoriteMovies.indexOf(movie);
+    this.movieService.favoriteMovies.splice(itemIndex, 1);
+  }
 }
