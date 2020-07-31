@@ -1,6 +1,6 @@
 <div>
-    <img [src]="movie.poster ? movie.poster : 'https://via.placeholder.com/150'">
-    {{movie.title}}
-    {{movie.release_date}}
-    <i class="fas fa-heart" (click)="addToFavorites(movie)" ></i>
+    <img [src]="child.poster_path ? 'https://image.tmdb.org/t/p/original' + child.poster_path : 'https://via.placeholder.com/150'">
+    {{child.title}}
+    {{child.release_date}}
+    <i class="fas fa-heart" (click)="addToFavorites(child)" *ngIf="isInFavorites()"></i>
 </div>
