@@ -18,17 +18,16 @@ export class SingleMovieComponent implements OnInit {
 constructor(private movieService: MoviesService) { }
 
   ngOnInit()  {
-  this.movie = {
-    poster: 'https://image.tmdb.org/t/p/original' + this.child.poster_path,
-    title: this.child.title,
-    release_date: this.child.release_date,
-    overview: this.child.overview,
-  }
+
   }
 
 
   addToFavorites(movie) {
     this.movieService.favoriteMovies.push(movie);
     console.log(this.movieService.favoriteMovies);
+  }
+
+  isInFavorites() {
+    return !this.movieService.favoriteMovies.includes(this.child);
   }
 }
