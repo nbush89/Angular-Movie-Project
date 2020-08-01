@@ -9,3 +9,16 @@ div {
     width: 100%;
     Box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
+
+.formclass {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.formclass div {
+    display: flex;
+    flex-direction: column;
+    Box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+}
+
