@@ -6,4 +6,6 @@ body {
     margin: 0px;
     padding: 0px;
     align-items: center;
+    background: rgb(8,24,58);
+    background: linear-gradient(180deg, rgba(8,24,58,1) 0%, rgba(77,59,96,1) 28%, rgba(85,62,95,1) 40%, rgba(253,123,83,1) 68%);
 }
