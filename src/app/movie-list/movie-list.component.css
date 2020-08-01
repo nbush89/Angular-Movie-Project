@@ -1,0 +1,11 @@
+div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10em;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+}
