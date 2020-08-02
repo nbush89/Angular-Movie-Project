@@ -1,30 +1,31 @@
-<div>
+<section>
 <header>
-    <h1>The Movie Corner</h1>
-    <a routerLink="/favorites" routerLinkActive="active"><button>Show Favorites</button></a>
+    <img src="../../assets/SVG/MovieNightLogo.svg">
 </header>
+
+<a routerLink="/favorites" routerLinkActive="active"><button>View Watchlist</button></a>
 
 <form class="formclass" #searchForm="ngForm" (submit)="formSubmitted(searchForm)">
 
     <div>
-        <p>search Year</p>
+        <p>Search Year</p>
         <input name="year" type='text' placeholder="search by year" ngModel>
     </div>
 
     <div>
-        <p>search Year</p>
+        <p>Search Rating</p>
         <input name="rating" type="number" placeholder="search by rating" ngModel>
-    </div>
-
-    <div>
     <input type="radio" [value]="true" name="greaterThanRating" ngModel> Greater Than
     <input type="radio" [value]="false" name="greaterThanRating" ngModel> Less Than
     </div>
     
+    <div>
+    <p>Search Genre</p>
     <select name="genre" ngModel onChange="this.searchForm.submit()">
         <option *ngFor="let genre of getGenres()" [value]="genre.id">{{genre.name}}</option>
     </select>
+    </div>
     
-    <button type="submit">submit</button>
+    <button type="submit">Submit</button>
 </form>
-</div>
+</section>

@@ -12,12 +12,15 @@ div {
     Font-family: Open Sans;
     Font-weight: 300;
     margin: 20px;
-    padding: 20px;
+    padding: 30px 20px 20px 20px;
     width: 250px;
     Box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     border-radius: 30px;
+    height: 335px;
 }
 
 .fas {
-    color:rgb(180, 0, 255)
+    margin: 15px 0px 5px 0px;
+    color:rgb(180, 0, 255);
+    font-size: 30px;
 }
