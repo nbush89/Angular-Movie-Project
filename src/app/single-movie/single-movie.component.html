@@ -1,5 +1,5 @@
 <div>
     {{child.title}}
-    <img [src]="child.poster_path ? 'https://image.tmdb.org/t/p/original' + child.poster_path : 'https://via.placeholder.com/150'" [routerLink]="['/details']">
+    <img [src]="child.poster_path ? 'https://image.tmdb.org/t/p/original' + child.poster_path : 'https://via.placeholder.com/150'" [routerLink]="['/details']" (click)="setMovieDetails(child)">
     <span title="Add movie to Watchlist"><i class="fas fa-heart" (click)="addToFavorites(child)" *ngIf="isInFavorites()"></i></span>
 </div>
