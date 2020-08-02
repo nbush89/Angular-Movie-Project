@@ -8,16 +8,19 @@ import { MoviesService } from '../movies.service';
 })
 export class DetailsComponent implements OnInit {
 
-  @Input() child: any;
-
+details: any;
+  
   constructor(private movieService: MoviesService) { }
 
 
 
   ngOnInit(): void {
-      // return this.movieService.movies;
+     this.getMovieDetails();
+
   }
-
-
+getMovieDetails(): any {
+    this.details = this.movieService.getMovieDetails();
+    console.log(this.details);
+  }
 
 }
