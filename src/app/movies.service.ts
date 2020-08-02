@@ -15,6 +15,7 @@ export class MoviesService {
   genres: Genre[]; 
   year: number; 
   rating: number;
+  movieDetails: any;
   //page: number = 1;
 
   favoriteMovies: any = [];
@@ -38,5 +39,11 @@ export class MoviesService {
 
   getGenres(): Observable<any> {
     return this.http.get<any>('https://api.themoviedb.org/3/genre/movie/list', {params: {api_key: this.apiKey}});
+  }
+  setMovieDetails(movie: any): any {
+    this.movieDetails = movie;
+  }
+  getMovieDetails(): any {
+    return this.movieDetails;
   }
 }
