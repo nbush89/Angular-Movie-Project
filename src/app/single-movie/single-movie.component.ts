@@ -30,4 +30,6 @@ constructor(private movieService: MoviesService) { }
   isInFavorites() {
     return !this.movieService.favoriteMovies.includes(this.child);
   }
+
+
 }
