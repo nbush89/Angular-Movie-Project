@@ -5,11 +5,11 @@
 
 <div class="details-container">
 <div class="details">
-    <img [src]="child.poster_path ? 'https://image.tmdb.org/t/p/original' + child.poster_path : 'https://via.placeholder.com/150'">
+    <img [src]="details.poster_path ? 'https://image.tmdb.org/t/p/original' + details.poster_path : 'https://via.placeholder.com/150'">
     <div class="movie-info">
-    {{child.title}}
-    {{child.release_date}}
-    {{child.overview}}
+    {{details.title}}
+    {{details.release_date}}
+    {{details.overview}}
     </div>
 </div>
 </div>
