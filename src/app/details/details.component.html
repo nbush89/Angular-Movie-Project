@@ -1,0 +1,15 @@
+<header>
+    <h2>Movie Info</h2>
+    <a routerLink ="/home" routerLinkActive="active"><button>Back to Discover Page</button></a>
+</header>
+
+<div class="details-container">
+<div class="details">
+    <img [src]="child.poster_path ? 'https://image.tmdb.org/t/p/original' + child.poster_path : 'https://via.placeholder.com/150'">
+    <div class="movie-info">
+    {{child.title}}
+    {{child.release_date}}
+    {{child.overview}}
+    </div>
+</div>
+</div>

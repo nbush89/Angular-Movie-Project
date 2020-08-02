@@ -11,12 +11,14 @@ import { RouterModule } from '@angular/router';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SingleMovieComponent } from './single-movie/single-movie.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
+import { DetailsComponent } from './details/details.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: MovieListComponent},
   {path: 'favorites', component: FavoritesComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: '**', component: PagenotfoundComponent}
+  // {path: '**', component: PagenotfoundComponent},
+  {path: 'details', component: DetailsComponent}
 ]
 
 
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     SingleMovieComponent,
     MovieListComponent,
     SearchCriteriaComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
